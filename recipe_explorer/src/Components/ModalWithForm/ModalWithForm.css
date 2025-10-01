@@ -1,0 +1,104 @@
+.modal-with-form__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.modal-with-form {
+  background-color: #fff;
+  position: relative;
+  padding: 28px 36px;
+  max-width: 496px; 
+  width: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.modal-with-form__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Title */
+.modal-with-form__title {
+  margin: 0 0 24px 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+  text-align: center;
+}
+
+/* Form layout */
+.modal-with-form__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+/* Inputs inside modal */
+.modal-with-form__form input {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1.5px solid black;
+  outline: none;
+  font-size: 14px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+/* Submit button */
+.modal-with-form__submit {
+  padding: 10px 20px;
+  background-color: #3a6b2f;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.10em;
+}
+
+.modal-with-form__submit:hover {
+  background-color: #2f5a24;
+}
+
+.modal-with-form__switch {
+  background: none;
+  border: none;
+  color: #000;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  font-size: 14px;
+  width: fit-content;
+  position: relative;
+  left: 75px;
+}
+
+.modal-with-form__switch:hover {
+  color: #3a6b2f;
+}
+

@@ -1,23 +1,33 @@
-import React from 'react';
-import './ModalWithForm.css';
+import React from "react";
+import "./ModalWithForm.css";
 
-function ModalWithForm() {
-    return (
-        <div className="modal-with-form">
-            <h2>Modal Title</h2>
-            <form>
-                <label>
-                    Field 1:
-                    <input type="text" name="field1" />
-                </label>
-                <label>
-                    Field 2:
-                    <input type="text" name="field2" />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    );
+function ModalWithForm({
+  title,
+  children,
+  buttonText = "Submit",
+  onClose = () => {},
+  onSubmit = () => {},
+}) {
+  return (
+    <div className="modal-with-form__overlay">
+      <div className="modal-with-form">
+        <button
+          type="button"
+          className="modal-with-form__close"
+          onClick={onClose}
+        >
+          ✕
+        </button>
+        <h2 className="modal-with-form__title">{title}</h2>
+        <form className="modal-with-form__form" onSubmit={onSubmit}>
+          {children}
+          <button type="submit" className="modal-with-form__submit">
+            {buttonText}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default ModalWithForm;

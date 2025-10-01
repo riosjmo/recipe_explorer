@@ -1,26 +1,87 @@
-import React from 'react';
-import './RegisterModal.css';
+import { useState, useEffect } from "react";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal() {
+function RegisterModal({
+  isOpen,
+  onClose = () => {},
+  onLoginClick = () => {},
+  onRegister = () => {},
+}) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Scroll lock when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  // If not open, don't render
+  if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onRegister({ name, avatar, email, password });
+  };
+
   return (
-    <div className="register-modal">
-      <h2>Register</h2>
-      <form>
-        <label>
-          Username:
-          <input type="text" name="username" />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Password:
-          <input type="password" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    <ModalWithForm
+      title="Register"
+      buttonText="Sign Up"
+      onClose={onClose}
+      onSubmit={handleSubmit}
+    >
+      <label htmlFor="register-name" className="modal__name_label">
+        Name:
+        <input
+          type="text"
+          id="register-name"
+          className="modal__input"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </label>
+
+      <label>
+        Email:
+        <input
+          type="email"
+          value={email}
+          placeholder="Enter your email"
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </label>
+
+      <label>
+        Password:
+        <input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </label>
+
+      <button
+        type="button"
+        className="modal-with-form__switch"
+        onClick={onLoginClick}
+      >
+        Already have an account? Log in
+      </button>
+    </ModalWithForm>
   );
 }
 

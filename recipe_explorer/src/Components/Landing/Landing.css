@@ -66,9 +66,9 @@
   color: #fafaf8;
 }
 
-.hero__login {
+.hero__login,
+.hero__register {
   background: #ffd166;
-  color: #111;
   border: none;
   padding: 12px 18px;
   border-radius: 18px;
@@ -76,35 +76,37 @@
   width: 150px;
   font-weight: 600;
   cursor: pointer;
+  font-family: "Machala Sans Regular", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.10em;
+  word-spacing: 0.04em;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero__login {
+  color: #3a6b2f;
   position: relative;
   top: 65px;
   right: 115px;
-  font-family: "Machala Sans Regular", sans-serif;
-  letter-spacing: 0.10em;
-  word-spacing: 0.04em;
-  color: #3a6b2f;
-  font-size: 17px;
+}
+
+.hero__login:hover {
+  background-color: #1c4113;
+  color: #ffd166;
 }
 
 .hero__register {
-  background: #ffd166;
-  color: #111;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 18px;
-  height: 45px;
-  width: 150px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-left: 12px;
+  color: #417735;
   position: relative;
   top: 65px;
   right: 95px;
-  font-family: "Machala Sans Regular", sans-serif;
-  letter-spacing: 0.12em;
-  word-spacing: 0.04em;
-  color: #417735;
-  font-size: 17px;
+  margin-left: 12px;
+}
+
+.hero__register:hover {
+  background-color: #1c4113;
+  color: #ffd166;
 }
 
 .hero__image {
