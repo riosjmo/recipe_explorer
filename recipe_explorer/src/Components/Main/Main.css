@@ -1,9 +1,11 @@
 .hero {
   min-height: 100vh;
-  background: #A0C797;
+  background: #3a6b2f;
+  background-image: linear-gradient(85deg, #2f5a24 0%, #78af6b 100%);
   color: #fff;
   display: flex;
-  align-items: center;
+  /* align to start so title sits higher on the page */
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -14,12 +16,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 48px 24px;
+  /* add extra top padding so content starts higher on the page */
+  padding: 80px 4px 48px;
   position: relative;
 }
 
 .hero__left {
-  max-width: 55%;
+  max-width: 70%;
 }
 
 .hero__logo {
@@ -28,15 +31,42 @@
 }
 
 .hero__title {
-  font-size: 4.6rem;
-  line-height: 0.95;
+  font-family: "Machala Sans Regular", sans-serif;
+  font-size: 7.7rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  word-spacing: 0.04em;
   margin: 0 0 12px;
   font-weight: 700;
+  color: #efead5;
+}
+
+.hero__title-line1,
+.hero__title-line2 {
+  display: block;
+  position: relative;
+  top: 45px;
+  right: 115px;
+}
+
+/* keep the first line together on larger screens */
+@media (min-width: 900px) {
+  .hero__title-line1 {
+    white-space: nowrap;
+  }
 }
 
 .hero__sub {
   margin: 0 0 18px;
   opacity: 0.95;
+  position: relative;
+  letter-spacing: 0.02em;
+  word-spacing: 0.04em;
+  font-size: 1.5rem;
+  font-family: "Machala Sans Regular", sans-serif;
+  top: 85px;
+  right: 115px;
+  color: #fafaf8;
 }
 
 .hero__login {
@@ -44,30 +74,84 @@
   color: #111;
   border: none;
   padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 18px;
+  height: 45px;
+  width: 150px;
   font-weight: 600;
   cursor: pointer;
+  position: relative;
+  top: 105px;
+  right: 115px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.10em;
+  word-spacing: 0.04em;
+  color: #3a6b2f;
+  font-size: 17px;
+}
+
+.hero__register {
+  background: #ffd166;
+  color: #111;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 18px;
+  height: 45px;
+  width: 150px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 12px;
+  position: relative;
+  top: 105px;
+  right: 95px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.12em;
+  word-spacing: 0.04em;
+  color: #417735;
+  font-size: 17px;
 }
 
 .hero__image {
-  width: 45%;
+  width: 35%;
   display: flex;
-  justify-content: flex-end;
-  pointer-events: none; /* decorative */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }
 
 .hero__image img {
-  max-width: 720px;
-  width: 100%;
-  transform: translateX(8%);
+  max-width: 700px;
+  width: auto;
+  height: auto;
+  position: relative;
+  left: 70px;
 }
 
 @media (max-width: 900px) {
-  .hero__inner { flex-direction: column; align-items: center; gap: 18px; }
-  .hero__left { max-width: 100%; text-align: center; }
-  .hero__title { font-size: 2.6rem; }
-  .hero__image { width: 80%; order: 2; }
-  .hero__image img { transform: translateX(0); max-width: 400px; }
+  .hero__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .hero {
+    align-items: center;
+  }
+  .hero__left {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero__title {
+    font-size: 2.6rem;
+    letter-spacing: 0.01em;
+    line-height: 1.08;
+  }
+  .hero__image {
+    width: 80%;
+    order: 2;
+  }
+  .hero__image img {
+    transform: translateX(0);
+    max-width: 400px;
+  }
 }
 .main {
   padding: 20px;

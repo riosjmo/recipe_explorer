@@ -1,3 +1,6 @@
+/* Import local fonts first so they are registered globally */
+@import './vendor/fonts/style.css';
+
 /* Global reset to remove default margins and ensure full-bleed layout */
 *, *::before, *::after { box-sizing: border-box; }
 

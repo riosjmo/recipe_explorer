@@ -4,8 +4,10 @@ import "./Header.css";
 function Header() {
   return (
     <header className="header">
-      <h1>
-        <Link className="header__link" to="/">Churro</Link>
+      <h1 className="header__title">
+        <Link className="header__link" to="/">
+          CHURRO
+        </Link>
       </h1>
     </header>
   );
