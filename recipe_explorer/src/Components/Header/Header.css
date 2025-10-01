@@ -4,6 +4,8 @@
   background-image: linear-gradient(85deg, #325c28 0%, #78af6b 100%);
   padding: 0;
   font-weight: bold;
+  position: relative;
+  z-index: 10;
 }
 
 .header__link {
@@ -26,4 +28,48 @@
   top: 10px;
   left: 25px;
   align-items: center;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  top: -20px;
+  right: 80px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+  font-size: 20px;
+  width: 250px;
+  position: relative;
+  left: 1500px;
+}
+.navigation a {
+  color: #efead5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* When on the home page we want the header to be visually transparent so
+   the Main hero background can extend underneath it. Keep this isolated
+   to the .header--transparent modifier so Landing still shows the normal
+   header background. */
+.header--transparent {
+  background: transparent;
+  background-image: none;
+  color: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+/* Ensure header inner keeps its layout when fixed */
+.header--transparent .header__inner {
+  background: transparent;
 }

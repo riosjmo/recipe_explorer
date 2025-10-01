@@ -44,6 +44,7 @@ function App() {
             }
           />
           <Route path="/home" element={<Main />} />
+          {/* // change to /contact after */}
           <Route path="/about" element={<About />} />
         </Routes>
         {isLoginModalOpen && (
