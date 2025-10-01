@@ -1,0 +1,30 @@
+
+.search-form {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+	margin: 16px 0;
+}
+
+.search-form__input {
+	width: 60%;
+	max-width: 480px;
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	font-size: 1rem;
+}
+
+.search-form__button {
+	padding: 8px 14px;
+	border: none;
+	background: #ff7a18;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	.search-form__input { width: 70%; }
+}

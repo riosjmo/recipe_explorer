@@ -1,0 +1,11 @@
+.header {
+    background-color: #A0C797;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.header__link {
+    color: white;
+    text-decoration: none;
+}
