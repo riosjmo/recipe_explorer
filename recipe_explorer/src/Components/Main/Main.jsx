@@ -80,7 +80,7 @@ function Main() {
             {loading && <p>Loading...</p>}
             {error && <p className="recipes__error">{error}</p>}
             {!loading && !error && results && results.length === 0 && (
-              <p>No results yet — try a search.</p>
+              <p className="recipes__error">No results yet — try a search.</p>
             )}
             {results &&
               results.slice(0, visibleCount).map((r) => (
