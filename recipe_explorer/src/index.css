@@ -13,6 +13,15 @@ body {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	background-color: #efead5;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#root {
+  min-height: 100%;
+  background: transparent;
 }
 
 /* You can set a global font-family here if you want */

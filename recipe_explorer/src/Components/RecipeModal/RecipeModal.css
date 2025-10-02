@@ -1,0 +1,103 @@
+/* Overlay: centers modal and allows scrolling if modal is too tall */
+.modal-with-form__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* slightly darker for recipes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* scroll if modal exceeds viewport */
+  padding: 40px 16px;
+}
+
+/* Modal container: scroll internally if content is tall */
+.modal-with-form {
+  background-color: #fff;
+  position: relative;
+  padding: 32px 24px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+
+  max-height: 90vh; /* never exceeds 90% of viewport height */
+  overflow-y: auto; /* scroll inside modal */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close button */
+.modal-with-form__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Title */
+.modal-with-form__title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+/* Form/content inside modal */
+.modal-with-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Scrollable content section for recipes */
+.recipe-modal__content {
+  overflow-y: auto;
+  padding-right: 8px; /* prevents scrollbar overlap with content */
+}
+
+/* Recipe headings inside modal */
+.recipe-modal__heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+/* Images inside recipe modal */
+.recipe-modal__image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+/* Paragraphs */
+.recipe-modal__text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Optional button for actions (like save recipe) */
+.recipe-modal__button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3a6b2f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+.recipe-modal__button:hover {
+  background-color: #2f5a24;
+}

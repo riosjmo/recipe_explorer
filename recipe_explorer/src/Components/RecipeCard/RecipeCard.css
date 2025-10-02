@@ -2,18 +2,51 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  overflow: hidden;
   text-align: center;
+
+  /* make the card a flex container with column layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push button to bottom */
+  height: 100%; /* ensures all cards have equal height if parent grid uses same height */
+}
+
+.recipe-card__media {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
 }
 
 .recipe-card__image {
   width: 100%;
-  border-radius: 8px;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.recipe-card__content {
+  padding: 12px 16px;
+  /* make content area expand to push the button down */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .recipe-card__title {
-  margin: 15px 0 10px;
+  margin: 8px 0 10px;
   font-size: 1.2rem;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+.recipe-card__description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+  flex-grow: 1; /* makes description area expand to fill space */
 }
 
 .recipe-card__button {
@@ -23,4 +56,13 @@
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.09em;
+  /* optional: full width for better alignment */
+  width: 100%;
+  margin-top: auto; /* push to bottom of flex column */
+}
+
+.recipe-card__button:hover {
+  background: #45a049;
 }

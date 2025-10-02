@@ -61,7 +61,7 @@
   display: flex;
   justify-content: center;
   font-family: "Machala Sans Regular", sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 0.07em;
   position: relative;
   bottom: 10px;
@@ -94,4 +94,64 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  color: #000;
+  padding: 32px 20px;
+}
+
+.recipes__title {
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+  font-size: 25px;
+}
+
+.recipes__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: block;
+}
+
+.recipes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 360px); /* fixed column width to control card size */
+  justify-content: center; /* center the grid within the inner container */
+  gap: 24px;
+}
+
+.recipes__errror {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+.show-more-btn {
+  padding: 8px 14px;
+  border: none;
+  background: #3a6b2f;
+  color: white;
+  border-radius: 20px;
+  height: 38.5px;
+  cursor: pointer;
+  position: relative;
+  top: 50px;
+  left: 510px;
+  font-family: "Machala Sans Regular", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+@media (max-width: 900px) {
+  .recipes__grid {
+    grid-template-columns: repeat(2, 360px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipes__grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+    max-width: 420px;
+    margin: 0 auto;
+  }
 }

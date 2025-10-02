@@ -1,24 +1,22 @@
 import "./RecipeCard.css";
 
 function RecipeCard({ recipe = {}, onView = () => {} }) {
-  const { title = 'Untitled', image, description = '' } = recipe;
+  const { title = "Untitled", image, description = "", summary = "" } = recipe;
+
+  const cleanDescription = summary ? stripHtml(summary) : description;
 
   return (
     <div className="recipe-card">
       <div className="recipe-card__media">
         <img
-          src={image || 'https://via.placeholder.com/300x200'}
+          src={image || "https://placehold.co/300x200"}
           alt={title}
           className="recipe-card__image"
         />
       </div>
       <div className="recipe-card__content">
         <h3 className="recipe-card__title">{title}</h3>
-        <p className="recipe-card__description">{description}</p>
-        <button
-          className="recipe-card__button"
-          onClick={() => onView(recipe)}
-        >
+        <button className="recipe-card__button" onClick={() => onView(recipe)}>
           View Recipe
         </button>
       </div>

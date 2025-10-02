@@ -45,7 +45,6 @@
   letter-spacing: 0.07em;
   font-size: 20px;
   width: 250px;
-  position: relative;
   left: 1500px;
 }
 .navigation a {
@@ -54,10 +53,6 @@
   font-weight: 600;
 }
 
-/* When on the home page we want the header to be visually transparent so
-   the Main hero background can extend underneath it. Keep this isolated
-   to the .header--transparent modifier so Landing still shows the normal
-   header background. */
 .header--transparent {
   background: transparent;
   background-image: none;

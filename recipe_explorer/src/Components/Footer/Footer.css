@@ -7,3 +7,9 @@
     width: 100%;
     font-family: "Machala Sans Regular", sans-serif;
 }
+
+.footer--light {
+    background-image: none;
+    background-color: #efead5;
+    color: #3a6b2f; /* darker text for contrast */
+}
