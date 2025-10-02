@@ -1,5 +1,5 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "./RecipeModal.css"; // make sure you import the CSS here
+import "./RecipeModal.css";
 
 function RecipeModal({ recipe, onClose }) {
   if (!recipe) return null;

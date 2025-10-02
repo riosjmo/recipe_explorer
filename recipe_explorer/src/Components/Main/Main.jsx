@@ -44,19 +44,16 @@ function Main() {
 
   const handleQueryChange = (val) => setQuery(val);
 
+  const hasSearched = results.length > 0 || loading || error;
+
   return (
     <main className="main">
-      <section className="main-hero">
+      <section className={`main-hero ${!hasSearched ? "main-hero--full" : ""}`}>
         <div
           className="main-hero__bg"
           role="img"
           aria-label="Kitchen background"
           style={{ backgroundImage: `url(${kitchen})` }}
-        />
-        <div
-          className="main-hero__bg"
-          role="img"
-          aria-label="Kitchen background"
         />
         <div className="main-hero__inner">
           <h1 className="main-hero__title">What's going on in the kitchen?</h1>
@@ -73,41 +70,47 @@ function Main() {
         </div>
       </section>
 
-      <section className="recipes">
-        <div className="recipes__inner">
-          <h2 className="recipes__title">Search results</h2>
-          <div className="recipes__grid">
-            {loading && <p>Loading...</p>}
-            {error && <p className="recipes__error">{error}</p>}
-            {!loading && !error && results && results.length === 0 && (
-              <p className="recipes__error">No results yet — try a search.</p>
-            )}
-            {results &&
-              results.slice(0, visibleCount).map((r) => (
-                <RecipeCard
-                  key={r.id || r.title}
-                  recipe={{
-                    title: r.title,
-                    image: r.image,
-                    description: r.summary || r.description,
-                    id: r.id,
-                  }}
-                  onView={handleViewRecipe}
-                />
-              ))}
-          </div>
-
-          {/* Show More button */}
-          {results.length > visibleCount && (
-            <button
-              className="show-more-btn"
-              onClick={() => setVisibleCount(results.length)}
+      {hasSearched && (
+        <section className="recipes">
+          <div className="recipes__inner">
+            <h2 className="recipes__title">Search results</h2>
+            <div
+              className={`recipes__grid ${results.length > 0 ? "fade-in" : ""}`}
             >
-              Show More
-            </button>
-          )}
-        </div>
-      </section>
+              {loading && <p>Loading...</p>}
+              {error && <p className="recipes__error">{error}</p>}
+              {!loading && !error && results && results.length === 0 && (
+                <p className="recipes__error">
+                  No results found — try another search.
+                </p>
+              )}
+              {results &&
+                results.slice(0, visibleCount).map((r) => (
+                  <RecipeCard
+                    key={r.id || r.title}
+                    recipe={{
+                      title: r.title,
+                      image: r.image,
+                      description: r.summary || r.description,
+                      id: r.id,
+                    }}
+                    onView={handleViewRecipe}
+                  />
+                ))}
+            </div>
+
+            {results.length > visibleCount && (
+              <button
+                className="show-more-btn"
+                onClick={() => setVisibleCount(results.length)}
+              >
+                Show More
+              </button>
+            )}
+          </div>
+        </section>
+      )}
+
       {modalOpen && selectedRecipe && (
         <RecipeModal
           recipe={selectedRecipe}

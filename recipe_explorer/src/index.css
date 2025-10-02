@@ -1,27 +1,38 @@
 /* Import local fonts first so they are registered globally */
-@import './vendor/fonts/style.css';
+@import "./vendor/fonts/style.css";
 
 /* Global reset to remove default margins and ensure full-bleed layout */
-*, *::before, *::after { box-sizing: border-box; }
-
-html, body, #root {
-	height: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
 body {
-	margin: 0;
-	padding: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-	background-color: #5e8b60;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+  background: linear-gradient(85deg, #2f5a24 0%, #78af6b 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #root {
-  min-height: 100%;
-  background: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; 
 }
 
 /* You can set a global font-family here if you want */

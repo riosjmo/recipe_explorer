@@ -10,6 +10,6 @@
 
 .footer--light {
     background-image: none;
-    background-color: #5e8b60;
+    background-color: transparent;
     color: #efead5; /* darker text for contrast */
 }
