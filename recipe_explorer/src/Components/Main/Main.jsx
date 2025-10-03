@@ -59,7 +59,7 @@ function Main() {
         <div className="main-hero__inner">
           <h1 className="main-hero__title">What's going on in the kitchen?</h1>
           <p className="main-hero__subtitle">
-            Find recipes, save favorites and start cooking.
+            Find recipes, save time and start cooking.
           </p>
           <div className="main-hero__search">
             <SearchForm
