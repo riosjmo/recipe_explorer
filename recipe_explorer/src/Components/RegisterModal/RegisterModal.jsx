@@ -29,7 +29,10 @@ function RegisterModal({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister({ name, avatar, email, password });
+    if (!name || !email || !password) return; // basic guard
+    onRegister({ name, email, password });
+    onClose();
+    navigate("/home"); // ✅ same as login
   };
 
   return (

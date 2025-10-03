@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useState } from "react";
 import LoginModal from "../LoginModal/LoginModal";
 import Landing from "../Landing/Landing";
@@ -12,6 +17,7 @@ import { AuthProvider } from "../../contexts/AuthContext";
 function App() {
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const openLogin = () => setLoginModalOpen(true);
   const closeLogin = () => setLoginModalOpen(false);
@@ -32,7 +38,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route
             path="/"
@@ -44,29 +50,28 @@ function App() {
             }
           />
           <Route path="/home" element={<Main />} />
-          {/* // change to /contact after */}
           <Route path="/about" element={<About />} />
         </Routes>
+
         {isLoginModalOpen && (
           <LoginModal
             isOpen={isLoginModalOpen}
             onClose={closeLogin}
             onRegisterClick={switchToRegister}
+            onLogin={() => setIsLoggedIn(true)}
           />
         )}
+
         {isRegisterModalOpen && (
           <RegisterModal
-            isOpen={isRegisterModalOpen} 
+            isOpen={isRegisterModalOpen}
             onClose={closeRegister}
             onLoginClick={switchToLogin}
-            onRegister={(data) => {
-              console.log("Register form submitted:", data);
-              // here you’d call signup() or AuthContext.register()
-              closeRegister();
-            }}
+            onRegister={() => setIsLoggedIn(true)}
           />
         )}
-        <Footer />
+        
+        <Footer isLoggedIn={isLoggedIn} />
       </AuthProvider>
     </Router>
   );

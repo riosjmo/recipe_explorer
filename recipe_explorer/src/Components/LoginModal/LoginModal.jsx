@@ -14,13 +14,13 @@ function LoginModal({
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: replace with actual login logic (API call)
-    console.log("Logging in:", { username, password });
-    onLogin({ username, password }); // optional, pass login data up
-    onClose();
-    navigate("/home");
-  };
+  e.preventDefault();
+  if (!username || !password) return; // basic guard
+  onLogin({ username, password });
+  onClose();
+  navigate("/home"); // ✅ always redirect to main
+};
+
 
   useEffect(() => {
     if (isOpen) {
