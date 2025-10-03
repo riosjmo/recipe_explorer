@@ -5,6 +5,7 @@ import RecipeCard from "../RecipeCard/RecipeCard";
 import RecipeModal from "../RecipeModal/RecipeModal";
 import { searchRecipes, getRecipeById } from "../../utils/SpoonacularApi";
 import kitchen from "../../assets/kitchen.jpg";
+import Preloader from "../Preloader/Preloader";
 
 function Main() {
   const [query, setQuery] = useState("");
@@ -77,7 +78,7 @@ function Main() {
             <div
               className={`recipes__grid ${results.length > 0 ? "fade-in" : ""}`}
             >
-              {loading && <p>Loading...</p>}
+              {loading && <Preloader />}
               {error && <p className="recipes__error">{error}</p>}
               {!loading && !error && results && results.length === 0 && (
                 <p className="recipes__error">
