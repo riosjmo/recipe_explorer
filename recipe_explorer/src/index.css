@@ -1,4 +1,4 @@
-/* Import local fonts globally */
+/* Fonts */
 @import "./vendor/fonts/style.css";
 
 html,
@@ -12,9 +12,7 @@ body,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Remove global background — handled per-page */
-  /* Use the landing/recipes gradient as the global page background so small
-     gaps above the footer blend with the design instead of showing white. */
+  /* Page background (shared gradient) */
   background: linear-gradient(85deg, #2f5a24 0%, #78af6b 100%);
 }
 
@@ -28,10 +26,10 @@ main {
   flex: 1;
 }
 
-/* You can set a global font-family here if you want */
+/* Optional global font family (uncomment to enable) */
 /* body { font-family: Inter, Roboto, system-ui, -apple-system, 'Segoe UI', sans-serif; } */
 
-/* Visible focus styles for accessibility */
+/* Focus styles: visible outline for keyboard users */
 button:focus,
 input:focus,
 select:focus,

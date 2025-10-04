@@ -1,12 +1,13 @@
 import { fetchJson } from "./api";
 
+// Spoonacular API client (uses VITE_SPOONACULAR_KEY from env)
 const BASE_URL = "https://api.spoonacular.com/recipes/complexSearch";
-
 const API_KEY = import.meta.env.VITE_SPOONACULAR_KEY;
 
 export function searchRecipes(query) {
-  const url = `${BASE_URL}?query=${encodeURIComponent(query)}&number=20&apiKey=${API_KEY}`;
-  // return promise chain that ends with catch in fetchJson
+  const url = `${BASE_URL}?query=${encodeURIComponent(
+    query
+  )}&number=20&apiKey=${API_KEY}`;
   return fetchJson(url).then((data) => data.results);
 }
 

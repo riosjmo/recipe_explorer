@@ -17,7 +17,6 @@ function ModalWithForm({
   }, [onClose]);
 
   const handleOverlayClick = (e) => {
-    // close only when clicking the overlay itself
     if (e.target === e.currentTarget) onClose();
   };
   return (
