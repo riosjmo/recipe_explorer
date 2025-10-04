@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/recipe_explorer">
       <AuthProvider>
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
@@ -70,7 +70,7 @@ function App() {
             onRegister={() => setIsLoggedIn(true)}
           />
         )}
-        
+
         <Footer isLoggedIn={isLoggedIn} />
       </AuthProvider>
     </Router>
