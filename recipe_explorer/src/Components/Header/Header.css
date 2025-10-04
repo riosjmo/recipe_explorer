@@ -31,8 +31,11 @@
 .header__link {
   color: #efead5;
   text-decoration: none;
-  font-size: 48px;
+  font-size: 60px;
   display: inline-block;
+  position: relative;
+  right: 120px;
+  top: 10px;
 }
 
 .navigation ul {
@@ -75,11 +78,11 @@
   }
 
   .header__link {
-    top: 20px;
-    left: 0;
+    font-size: 55px;
+    right: 10px;
     justify-content: center;
     text-align: center;
-    
+    position: relative;
   }
 
   .navigation ul {

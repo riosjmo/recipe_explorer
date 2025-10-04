@@ -1,5 +1,5 @@
 import "./Main.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SearchForm from "../SearchForm/SearchForm";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import RecipeModal from "../RecipeModal/RecipeModal";
@@ -13,6 +13,7 @@ function Main() {
   const [visibleCount, setVisibleCount] = useState(3);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [lastSearchedAt, setLastSearchedAt] = useState(0);
 
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -30,6 +31,7 @@ function Main() {
   const handleSearch = async (q) => {
     const term = q || query;
     if (!term) return;
+    setLastSearchedAt(Date.now());
     setLoading(true);
     setError(null);
     try {
@@ -46,6 +48,18 @@ function Main() {
   const handleQueryChange = (val) => setQuery(val);
 
   const hasSearched = results.length > 0 || loading || error;
+  const resultsRef = useRef(null);
+
+  useEffect(() => {
+    if (!lastSearchedAt) return;
+    if (loading) return;
+
+    const el = resultsRef.current;
+    if (!el) return;
+
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 20;
+    window.scrollTo({ top, behavior: "smooth" });
+  }, [loading, lastSearchedAt]);
 
   return (
     <main className="main">
@@ -72,7 +86,7 @@ function Main() {
       </section>
 
       {hasSearched && (
-        <section className="recipes">
+        <section className="recipes" ref={resultsRef}>
           <div className="recipes__inner">
             <h2 className="recipes__title">Search results</h2>
             <div

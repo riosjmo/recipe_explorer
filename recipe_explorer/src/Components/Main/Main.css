@@ -1,9 +1,12 @@
 .main {
   padding: 0;
 }
+
+html, body, .main {
+  scroll-behavior: smooth;
+}
 .main-hero {
   position: relative;
-  /* make the hero visually full-bleed while avoiding 100vw overflow issues */
   width: 100vw;
   left: 50%;
   right: 50%;
@@ -20,7 +23,7 @@
 }
 .main-hero__bg {
   position: absolute;
-  inset: 0; /* anchor to all edges of .main-hero */
+  inset: 0;
   background-size: cover;
   background-position: center;
   filter: saturate(0.95) contrast(0.95);
