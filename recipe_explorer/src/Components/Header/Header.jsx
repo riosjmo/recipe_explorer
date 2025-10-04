@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
@@ -8,6 +8,7 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
   const isLanding = location.pathname === "/";
   const isAbout = location.pathname === "/about";
   const isHomeOrAbout = isHome || isAbout;
+  const navigate = useNavigate();
 
   let logoLink = null;
 

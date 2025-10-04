@@ -7,19 +7,20 @@ function Landing({ onLoginClick = () => {}, onRegisterClick = () => {} }) {
       <div className="hero__inner">
         <div className="hero__left">
           <h1 className="hero__title">
-            <span className="hero__title-line1">Discover. Cook.</span>
-            <span className="hero__title-line2">Enjoy.</span>
+            <span className="hero__title-line1">Discover,</span>
+            <span className="hero__title-line2"> Cook, Enjoy.</span>
           </h1>
           <p className="hero__sub">
             Log in or Register to unlock endless recipes.
           </p>
-
+          <div className="hero__buttons" role="group" aria-label="Login and Register">
           <button className="hero__login" onClick={onLoginClick}>
             Log in
           </button>
           <button className="hero__register" onClick={onRegisterClick}>
             Register
           </button>
+        </div>
         </div>
 
         <div className="hero__image" aria-hidden="true">

@@ -2,10 +2,8 @@
   background-color: #3a6b2f;
   color: #efead5;
   background-image: linear-gradient(85deg, #2f5a24 0%, #76ac6a 100%);
-  padding: 1rem 2rem;
   width: 100%;
   font-family: "Machala Sans Regular", sans-serif;
-
   display: flex;
   justify-content: space-between; /* pushes left and right apart */
   align-items: center;
@@ -19,6 +17,8 @@
 
 .footer__left {
   font-size: 18px;
+  position: relative;
+  left: 10px;
 }
 
 .footer__right {
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 50px;
   position: relative;
-  right: 10px;
+  right: 15px;
 }
 
 .footer__about {
@@ -49,4 +49,10 @@
 
 .footer__icon:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 630px) {
+  .footer {
+    background-image: linear-gradient(85deg, #2b5820 0%, #6ea562 100%);
+  }
 }
