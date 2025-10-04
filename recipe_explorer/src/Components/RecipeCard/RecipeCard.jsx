@@ -1,9 +1,7 @@
 import "./RecipeCard.css";
 
 function RecipeCard({ recipe = {}, onView = () => {} }) {
-  const { title = "Untitled", image, description = "", summary = "" } = recipe;
-
-  const cleanDescription = summary ? stripHtml(summary) : description;
+  const { title = "Untitled", image } = recipe;
 
   return (
     <div className="recipe-card">

@@ -5,7 +5,7 @@
   width: 100%;
   font-family: "Machala Sans Regular", sans-serif;
   display: flex;
-  justify-content: space-between; /* pushes left and right apart */
+  justify-content: space-between;
   align-items: center;
 }
 
