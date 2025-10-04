@@ -68,7 +68,6 @@
   background: transparent;
 }
 
-/* Mobile responsive: center logo on landing page */
 @media (max-width: 900px) {
   .header__title {
     justify-content: center;
@@ -80,6 +79,7 @@
     left: 0;
     justify-content: center;
     text-align: center;
+    
   }
 
   .navigation ul {
@@ -88,5 +88,24 @@
     justify-content: center;
     width: auto;
     gap: 15px;
+    
+  }
+
+  .header__inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navigation__log_out {
+    position: relative;
+    right: 150px;
+    bottom: 40px;
+  }
+
+  .navigation__about {
+    position: relative;
+    left: 130px;
+    bottom: 40px;
   }
 }
