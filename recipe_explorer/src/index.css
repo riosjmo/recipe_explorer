@@ -30,3 +30,12 @@ main {
 
 /* You can set a global font-family here if you want */
 /* body { font-family: Inter, Roboto, system-ui, -apple-system, 'Segoe UI', sans-serif; } */
+
+/* Visible focus styles for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(66, 153, 225, 0.6);
+  outline-offset: 2px;
+}

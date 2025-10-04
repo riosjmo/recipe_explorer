@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ModalWithForm.css";
 
 function ModalWithForm({
@@ -8,9 +8,21 @@ function ModalWithForm({
   onClose = () => {},
   onSubmit = () => {},
 }) {
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [onClose]);
+
+  const handleOverlayClick = (e) => {
+    // close only when clicking the overlay itself
+    if (e.target === e.currentTarget) onClose();
+  };
   return (
-    <div className="modal-with-form__overlay">
-      <div className="modal-with-form">
+    <div className="modal-with-form__overlay" onClick={handleOverlayClick}>
+      <div className="modal-with-form" onClick={(e) => e.stopPropagation()}>
         <button
           type="button"
           className="modal-with-form__close"
