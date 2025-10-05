@@ -111,3 +111,15 @@
     bottom: 40px;
   }
 }
+
+@media (max-width: 900px) {
+  .navigation__log_out {
+    right: 125px;
+    bottom: 40px;
+  }
+
+  .navigation__about {
+    left: 90px;
+    bottom: 38px;
+  }
+}

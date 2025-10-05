@@ -95,10 +95,16 @@
   font-size: 14px;
   width: fit-content;
   position: relative;
-  left: 75px;
+  left: 150px;
 }
 
 .modal-with-form__switch:hover {
   color: #3a6b2f;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-with-form__switch {
+    left: 30px;
+  }
 }
 

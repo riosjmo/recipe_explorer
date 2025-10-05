@@ -39,7 +39,10 @@
 }
 
 @media (max-width: 600px) {
+
+
   .search-form__input {
-    width: 70%;
+    position: relative;
+    width: 50%;
   }
 }
