@@ -25,6 +25,7 @@ function Main() {
       setModalOpen(true);
     } catch (err) {
       console.error("Failed to load recipe:", err);
+      setError(err.message || "Failed to load recipe");
     }
   };
 
@@ -131,6 +132,20 @@ function Main() {
           recipe={selectedRecipe}
           onClose={() => setModalOpen(false)}
         />
+      )}
+
+      {/* Toast for user-visible errors */}
+      {error && (
+        <div className="toast" role="alert" aria-live="assertive">
+          <div className="toast__message">{error}</div>
+          <button
+            className="toast__close"
+            aria-label="Dismiss error"
+            onClick={() => setError(null)}
+          >
+            ✕
+          </button>
+        </div>
       )}
     </main>
   );
