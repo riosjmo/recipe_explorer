@@ -106,7 +106,7 @@
     padding: 10px 0;
   }
 
-  .navigation__log_out {
+  .navigation__log-out {
     position: relative;
     right: 150px;
     bottom: 40px;
@@ -120,7 +120,7 @@
 }
 
 @media (max-width: 900px) {
-  .navigation__log_out {
+  .navigation__log-out {
     right: 125px;
     bottom: 40px;
   }
@@ -140,7 +140,7 @@
     position: relative;
   }
 
-  .navigation__log_out {
+  .navigation__log-out {
     font-size: 15px;
     right: 95px;
     bottom: 25px;
