@@ -108,3 +108,9 @@
   }
 }
 
+@media (max-width: 370px) {
+  .modal-with-form__switch {
+    left: 5px;
+  }
+}
+

@@ -67,8 +67,9 @@
   .about__text {
     text-align: center;
   }
+}
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .about__image img {
       width: 200px;
       height: 200px;
@@ -86,4 +87,23 @@
       top: 15px;
     }
   }
+
+@media (max-width: 340px) {
+    .about__image img {
+      width: 175px;
+      height: 175px;
+      top: 50px;
+    }
+
+    .about__title {
+      font-size: 1.2rem;
+      position: relative;
+      top: 18px;
+    }
+
+    .about__description {
+      font-size: 0.9rem;
+      position: relative;
+      top: 18px;
+    }
 }

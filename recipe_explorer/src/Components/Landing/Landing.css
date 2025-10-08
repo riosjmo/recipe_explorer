@@ -22,9 +22,10 @@
 
 .hero__title-line2 {
   display: block;
-  width: 750px;
+  width: auto;
+  max-width: 780px;
   position: relative;
-  right: 85px;
+  right: 0;
 }
 
 .hero__left {
@@ -38,35 +39,33 @@
 
 .hero__title {
   font-family: "Machala Sans Regular", sans-serif;
-  font-size: 125px;
+  /* responsive heading size */
+  font-size: clamp(32px, 6vw, 125px);
   line-height: 1.05;
   margin: -5px 0 12px;
   font-weight: 700;
   color: #efead5;
   position: relative;
-  bottom: 50px;
-  right: 50px;
 }
 
 .hero__sub {
   margin: 35px 0 25px;
   opacity: 0.95;
-  font-size: 1.5rem;
+  font-size: clamp(14px, 2.2vw, 1.5rem);
   font-family: "Machala Sans Regular", sans-serif;
   color: #fafaf8;
   position: relative;
-  bottom: 40px;
-  right: 35px;
+  margin-top: 50px;
+  margin-left: -25px;
 }
 
 .hero__buttons {
   display: flex;
-  position: relative;
-  bottom: 40px;
-  right: 100px;
   justify-content: center;
   gap: 12px;
   margin-top: 20px;
+  position: relative;
+  margin-left: -215px;
 }
 
 .hero__login,
@@ -108,12 +107,35 @@
 }
 
 .hero__image img {
-  max-width: 700px;
+  max-width: min(700px, 45vw);
   width: 100%;
   height: auto;
   position: relative;
-  bottom: 50px;
-  left: 50px;
+  bottom: 0;
+  left: 0;
+}
+
+/* Intermediate breakpoint: reduce heading and image to avoid overlap */
+@media (max-width: 1300px) {
+  .hero__title {
+    font-size: clamp(28px, 5.5vw, 80px);
+  }
+
+  .hero__image {
+    width: 45%;
+  }
+
+  .hero__image img {
+    max-width: min(500px, 40vw);
+  }
+
+  .hero__sub {
+    margin-left: -12px;
+  }
+
+  .hero__buttons {
+    margin-left: -80px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -162,6 +184,7 @@
     position: relative;
     bottom: 0px;
     right: 0px;
+    margin-left: 0;
   }
 
   .hero__title-line2 {

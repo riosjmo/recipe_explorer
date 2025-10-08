@@ -39,10 +39,16 @@
 }
 
 @media (max-width: 600px) {
-
-
   .search-form__input {
     position: relative;
     width: 50%;
+  }
+}
+
+@media (max-width: 370px) {
+  .search-form {
+    width: 400px;
+    position: relative;
+    left: 25px;
   }
 }

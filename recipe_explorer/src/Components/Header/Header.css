@@ -34,8 +34,9 @@
   font-size: 60px;
   display: inline-block;
   position: relative;
-  right: 120px;
+  right: 130px;
   top: 10px;
+  padding-left: 10px;
 }
 
 .navigation ul {
@@ -69,6 +70,12 @@
 
 .header--transparent .header__inner {
   background: transparent;
+}
+
+@media (max-width: 1300px) {
+  .header__link {
+    right: 0px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -121,5 +128,27 @@
   .navigation__about {
     left: 90px;
     bottom: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__link {
+    font-size: 40px;
+    right: 15px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .navigation__log_out {
+    font-size: 15px;
+    right: 95px;
+    bottom: 25px;
+  }
+
+  .navigation__about {
+    font-size: 15px;
+    left: 60px;
+    bottom: 25px;
   }
 }
